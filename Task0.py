@@ -17,7 +17,7 @@ with open('calls.csv', 'r') as f:
     calls = list(reader)
     
     # store the first calls line, so it can be later printed for Task 0
-    first_call = calls[0]
+    last_call = calls[-1]
 
 
 """
@@ -28,6 +28,8 @@ Print messages:
 "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
 """
 
+# Answer to the Task 0
 print("First record of texts, <{0}> texts <{1}> at time <{2}>".format(first_text[0], first_text[1], first_text[2]))
-print("First record of calls, <{0}> calls <{1}> at time <{2}>".format(first_call[0], first_call[1], first_call[2]))
+print("Last record of calls, <{0}> calls <{1}> at time <{2}>, lasting <{3}> seconds".format(
+        last_call[0], last_call[1], last_call[2], last_call[3]))
 
