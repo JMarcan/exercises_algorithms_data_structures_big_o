@@ -1,7 +1,7 @@
 """
 Read file into texts and calls.
-It's ok if you don't understand how to read files
 """
+
 import csv
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
@@ -20,3 +20,30 @@ Print a message:
 September 2016.".
 """
 
+time_spent = {}
+
+for record in calls:
+    
+    time = int(record[3])
+    
+    calling_number = record[0]
+    #if number is already in the list, increment its calling time
+    #if number is not yet in the list, set current calling time as number's calling time
+    if calling_number in time_spent:
+        time_spent[calling_number] = time_spent[calling_number] + time
+    else:
+        time_spent[calling_number] = time
+        
+    receiving_number = record[1]
+    #if number is already in the list, increment its calling time
+    #if number is not yet in the list, set current calling time as number's calling time
+    if receiving_number in time_spent:
+        time_spent[receiving_number] = time_spent[receiving_number] + time
+    else:
+        time_spent[receiving_number] = time
+    
+most_calling_number = max(zip(time_spent.values(), time_spent.keys()))
+
+# Answer to the Task 2
+print("<{0}> spent the longest time, <{1}> seconds, on the phone during \
+      September 2016.".format(most_calling_number[1], most_calling_number[0]))
