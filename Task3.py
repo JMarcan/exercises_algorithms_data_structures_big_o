@@ -1,6 +1,5 @@
 """
 Read file into texts and calls.
-It's ok if you don't understand how to read files.
 """
 import csv
 
@@ -43,3 +42,47 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+calls_from_bangalore = 0 # to calculate the Part B
+calls_bangalore_bangalore = 0 # to calculate the Part B
+
+called_prefixes_bangalore = []
+
+for record in calls:
+    calling_number = record[0]
+    
+    # if calling number is from Bangalore
+    if calling_number.startswith("(080)") or calling_number.startswith("080"):
+        calls_from_bangalore = calls_from_bangalore + 1
+        
+        called_number = record[1]
+        called_prefix = ""
+        #if it's fixxed line, extract area code from called number
+        end = called_number.find(")")
+        if end != -1:
+            called_prefix = called_number[1:end]
+            
+            if called_prefix == "080":
+                calls_bangalore_bangalore = calls_bangalore_bangalore + 1
+        #if it's not fixed line, extracts mobile prefix
+        else:
+            end = called_number.find(" ")
+            called_prefix = called_number[:end]
+            
+        #if are code or mobile prefix is not yet in the list, add it
+        if called_prefix not in called_prefixes_bangalore:
+            called_prefixes_bangalore.append(called_prefix)
+
+# sort phone codes in lexicographic order
+            
+called_prefixes_bangalore.sort()
+
+# Answer to the Task 3, the part A   
+print("The numbers called by people in Bangalore have codes:")
+
+for phone_code in called_prefixes_bangalore:
+    print(phone_code)
+
+# Answer to the task 3, the part B    
+print ("<{:3.2f}> percent of calls from fixed lines in Bangalore are calls to other \
+       fixed lines in Bangalore".format(((100*calls_bangalore_bangalore)/calls_from_bangalore)))    
