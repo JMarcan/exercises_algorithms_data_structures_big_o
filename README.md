@@ -7,29 +7,29 @@ and for each solution performed its run time complexity analysis (Worst Case Big
 
 This project was completed as part of my Data Structures & Algorithms Nanodegree at Udacity.
 
-![comparison of computational complexity](assets/comparison_computational_complexity.png)
+![comparison of computational complexity](comparison_computational_complexity.png)
 
 ## Tasks description
 ### Task 0
 - What is the first record of texts and what is the last record of calls
-- Run time complexity of my solution: O(0n + 1) = O(1) | where n = count of records (count of records for calls + count of records for texts)
+- Run time complexity of my solution: `O(0n + 1)` = `O(1)` | where n = count of records (count of records for calls + count of records for texts)
 
 ### Task 1
 - How many different telephone numbers are there in the records
-- Run time complexity of my solution: O(n) | where n = count of records (count of records for texts)
+- Run time complexity of my solution: `O(n)` | where n = count of records (count of records for texts)
 
 ### Task 2
 - Which telephone number spent the longest time on the phone
-- Run time complexity of my solution: O(n) | where n = count of records (count of records for calls)
+- Run time complexity of my solution: `O(n)` | where n = count of records (count of records for calls)
 
 ### Task 3
 - Find all of the area codes and mobile prefixes called by people in Bangalore. 
 - What percentage of calls from fixed lines in Bangalore are made to fixed lines also in Bangalore
-- Run time complexity of my solution: O(n) | where n = count of records (count of records for calls)
+- Run time complexity of my solution: `O(n)` | where n = count of records (count of records for calls)
 
 ### Task 4
 - Create a set of possible telemarketers: these are numbers that make outgoing calls but never send texts, receive texts or receive incoming calls.
-- Run time complexity of my solution: O(n) | where n = count of records (count of records for calls + count of records for texts)
+- Run time complexity of my solution: `O(n)` | where n = count of records (count of records for calls + count of records for texts)
 
 ## Usage
 The project only purpose was my training,
