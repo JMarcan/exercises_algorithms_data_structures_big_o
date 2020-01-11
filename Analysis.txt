@@ -1,0 +1,21 @@
+=== Run Time Analysis (Worst Case Big O Notation)  for provided solutions === 
+
+Solution to complete Task 0 has complexity:
+- O(1)
+- where n = count of records (count of records for calls + count of records for texts)
+
+Solution to complete Task 1 has complexity:
+- O(n)
+- where n = count of records (count of records for texts)
+
+Solution to complete Task 2 has complexity:
+- O(n)
+- where n = count of records (count of records for calls)
+
+Solution to complete Task 3 has complexity:
+- O(n)
+- where n = count of records (count of records for calls)
+
+Solution to complete Task 4 has complexity:
+- O(n)
+- where n = count of records (count of records for calls + count of records for texts)
