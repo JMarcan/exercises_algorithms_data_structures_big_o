@@ -19,18 +19,24 @@ Print a message:
 "There are <count> different telephone numbers in the records."
 """
 
-unique_numbers = []
+unique_numbers = set()
 
 for record in texts:
-    
-    
     #if number is not yet in the list, add it
     if record[0] not in unique_numbers:
-        unique_numbers.append(record[0])
+        unique_numbers.add(record[0])
         
      #if number is not yet in the list, add it
     if record[1] not in unique_numbers:
-        unique_numbers.append(record[1])
+        unique_numbers.add(record[1])
         
+for record in calls:
+    #if number is not yet in the list, add it
+    if record[0] not in unique_numbers:
+        unique_numbers.add(record[0])
+        
+     #if number is not yet in the list, add it
+    if record[1] not in unique_numbers:
+        unique_numbers.add(record[1])        
 # Answer to the Task 1
 print ("There are <{0}> different telephone numbers in the records".format(len(unique_numbers)))
