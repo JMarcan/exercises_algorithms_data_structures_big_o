@@ -3,33 +3,11 @@
 ## Project description
 In this project I've implemented code,
 to analyze dataset of phone calls and texts,
-and for each solution performed its run time complexity analysis (Worst Case Big O Notation).
+and for each solution performed its run time and space complexity analysis (Worst Case Big O Notation).
 
 This project was completed as part of my Data Structures & Algorithms Nanodegree at Udacity.
 
 ![comparison of computational complexity](comparison_computational_complexity.png)
-
-## Tasks description
-### Task 0
-- What is the first record of texts and what is the last record of calls
-- Run time complexity of my solution: `O(0n + 1)` = `O(1)` | where n = count of records (count of records for calls + count of records for texts)
-
-### Task 1
-- How many different telephone numbers are there in the records
-- Run time complexity of my solution: `O(n)` | where n = count of records (count of records for texts)
-
-### Task 2
-- Which telephone number spent the longest time on the phone
-- Run time complexity of my solution: `O(n)` | where n = count of records (count of records for calls)
-
-### Task 3
-- Find all of the area codes and mobile prefixes called by people in Bangalore. 
-- What percentage of calls from fixed lines in Bangalore are made to fixed lines also in Bangalore
-- Run time complexity of my solution: `O(n)` | where n = count of records (count of records for calls)
-
-### Task 4
-- Create a set of possible telemarketers: these are numbers that make outgoing calls but never send texts, receive texts or receive incoming calls.
-- Run time complexity of my solution: `O(n)` | where n = count of records (count of records for calls + count of records for texts)
 
 ## Usage
 The project only purpose was my training,
@@ -47,3 +25,90 @@ however the code can be downloaded and directly run for each task in its own fil
 
 ## Libraries used
 Python 3
+
+## Tasks description
+### Task 0
+- What is the first record of texts and what is the last record of calls
+
+- Solution to complete Task 0 has
+    Time complexity:
+        - `O(1)` as we print the first and the last record, we execute always two prints, no matter how much records we have
+
+
+    Space complexity:
+        - `O(1)` as we print the first and the last record, we store them to two string variables, no matter how much records we have
+
+
+    Design choice:
+        I prioritize readibility for a user, 
+        so in the first part we store the first record in variable, then the last record one to second variable.
+        Then in the print statement we pass those variables as arguments
+
+### Task 1
+- How many different telephone numbers are there in the records
+
+- Solution to complete Task 1 has:
+    Time complexity:
+        - `O(n)` as we loop through each record
+
+    Space complexity:
+        - `O(n)` as in the worst case each new record represents an unique number we need to store
+
+    Design choice:
+        - To store unique numbers,
+           Set structure was used instead of List as it's the most efficient, 
+           and we don't care about order of items to calculate total count of unique numbers.
+           
+            When testing whether we already stored the given number, set works with hash tables,
+            it just looks whether the object is at the position determined by its hash,
+            so the speed of this operation does not depend on the size of the Set.
+            In contrast, for List the whole List would need to be searched,
+            which would provide us with worse performance than with Set structure.
+
+
+    [n = count of records (count of records for calls + count of records for texts)]
+
+### Task 2
+- Which telephone number spent the longest time on the phone
+- Solution to complete Task 2 has:
+    Time complexity:
+        - `O(n)` as we loop through each record  
+        
+    Space complexity:
+        - `O(n)` as in the worst case each new record represents an unique number we need to store
+    
+    Design choice: 
+        - To store how much time each number spent by calling,
+            Dictionary structure was choosen.  As we store key value pars between phone number and time spent by calling.    
+     
+    [n = count of records (count of records for calls)]
+
+### Task 3
+- Find all of the area codes and mobile prefixes called by people in Bangalore. 
+- What percentage of calls from fixed lines in Bangalore are made to fixed lines also in Bangalore
+- Solution to complete Task 3 has:
+    Time complexity:
+        - `O(n)` as we loop through each record
+        
+    Space complexity:
+        - `O(n)` as in the worst case each new record represents an unique area code we need to store
+        
+    Design choice: 
+        - To store unique area codes,  and later display them in lexicographic order,
+            List structure was choosen, as it allows us to sort list by lexicographic order by calling .sort()
+    
+    [n = count of records (count of records for calls)]
+
+### Task 4
+- Create a set of possible telemarketers: these are numbers that make outgoing calls but never send texts, receive texts or receive incoming calls.
+- Solution to complete Task 4 has complexity:
+    Time complexity:
+        - `O(n)` as we loop through each record, without any nested loop
+    Space complexity:
+        - `O(n)` as in the worst case each new record represents a possible telemarketer we need to store 
+      
+    Design choice:
+        - To store list of possible telemarketers,  and later display them in lexicographic order,
+            List structure was choosen, as it allows us to sort list by lexicographic order by calling .sort()  
+    
+    [n = count of records (count of records for calls + count of records for texts)]
