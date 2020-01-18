@@ -88,8 +88,10 @@ Python 3
 - What percentage of calls from fixed lines in Bangalore are made to fixed lines also in Bangalore
 - Solution to complete Task 3 has:
     Time complexity:
-        - `O(n)` as we loop through each record
-        
+        - `O(n log n)` as  we use `.sort()` function with time complexity [O(n log n)](https://wiki.python.org/moin/TimeComplexity)
+            and in the worst case each new record represents an unique area code we need to store and sort
+            Looping through each record itself has time complexity `O(n)` 
+                
     Space complexity:
         - `O(n)` as in the worst case each new record represents an unique area code we need to store
         
@@ -103,7 +105,9 @@ Python 3
 - Create a set of possible telemarketers: these are numbers that make outgoing calls but never send texts, receive texts or receive incoming calls.
 - Solution to complete Task 4 has complexity:
     Time complexity:
-        - `O(n)` as we loop through each record, without any nested loop
+        - `O(n log n)` as  we use `.sort()` function with time complexity [O(n log n)](https://wiki.python.org/moin/TimeComplexity)
+            and in the worst case each new record represents a possible telemarketer we need to store  and sort
+            Looping through each record itself has time complexity `O(n)` 
     Space complexity:
         - `O(n)` as in the worst case each new record represents a possible telemarketer we need to store 
       
