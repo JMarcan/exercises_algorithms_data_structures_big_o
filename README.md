@@ -1,11 +1,12 @@
 # Investigating_Texts_and_Calls
 
 ## Project description
+This project was completed as part of my Data Structures & Algorithms Nanodegree at Udacity,
+that I took to ensure that my code is written efficiently.
+
 In this project I've implemented code,
 to analyze dataset of phone calls and texts,
 and for each solution performed its run time and space complexity analysis (Worst Case Big O Notation).
-
-This project was completed as part of my Data Structures & Algorithms Nanodegree at Udacity.
 
 ![comparison of computational complexity](comparison_computational_complexity.png)
 
@@ -28,9 +29,9 @@ Python 3
 
 ## Tasks description
 ### Task 0
-- What is the first record of texts and what is the last record of calls
+- What is the first record of texts and what is the last record of calls?
 
-- Solution to complete Task 0 has
+- Solution to complete Task 0 has:
     Time complexity:
         - `O(1)` as we print the first and the last record, we execute always two prints, no matter how much records we have
 
@@ -45,31 +46,26 @@ Python 3
         Then in the print statement we pass those variables as arguments
 
 ### Task 1
-- How many different telephone numbers are there in the records
+* How many different telephone numbers are there in the records?
 
-- Solution to complete Task 1 has:
-    Time complexity:
-        - `O(n)` as we loop through each record
-
-    Space complexity:
-        - `O(n)` as in the worst case each new record represents an unique number we need to store
-
-    Design choice:
-        - To store unique numbers,
-           Set structure was used instead of List as it's the most efficient, 
-           and we don't care about order of items to calculate total count of unique numbers.
+* Solution to complete Task 1 has:
+    * Time complexity: `O(n)` as we loop through each record
+    * Space complexity: `O(n)` as in the worst case each new record represents an unique number we need to store
+    * Design choice: 
+        To store unique numbers, set structure was used instead of List as it's the most efficient, 
+        and we don't care about order of items to calculate total count of unique numbers.
            
-            When testing whether we already stored the given number, set works with hash tables,
-            it just looks whether the object is at the position determined by its hash,
-            so the speed of this operation does not depend on the size of the Set.
-            In contrast, for List the whole List would need to be searched,
-            which would provide us with worse performance than with Set structure.
+        When testing whether we already stored the given number, set works with hash tables,
+        it just looks whether the object is at the position determined by its hash,
+        so the speed of this operation does not depend on the size of the Set.
+        In contrast, for List the whole List would need to be searched,
+        which would provide us with worse performance than with Set structure.
 
 
     [n = count of records (count of records for calls + count of records for texts)]
 
 ### Task 2
-- Which telephone number spent the longest time on the phone
+- Which telephone number spent the longest time on the phone?
 - Solution to complete Task 2 has:
     Time complexity:
         - `O(n)` as we loop through each record  
@@ -85,7 +81,7 @@ Python 3
 
 ### Task 3
 - Find all of the area codes and mobile prefixes called by people in Bangalore. 
-- What percentage of calls from fixed lines in Bangalore are made to fixed lines also in Bangalore
+- What percentage of calls from fixed lines in Bangalore are made to fixed lines also in Bangalore?
 - Solution to complete Task 3 has:
     Time complexity:
         - `O(n log n)` as  we use `.sort()` function with time complexity [O(n log n)](https://wiki.python.org/moin/TimeComplexity)
