@@ -2,6 +2,7 @@
 Read file into texts and calls.
 """
 import csv
+import math
 
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
@@ -42,6 +43,9 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+def round_half_up(n, decimals=0):
+    multiplier = 10 ** decimals
+    return math.floor(n*multiplier + 0.5) / multiplier
 
 calls_from_bangalore = 0 # to calculate the Part B
 calls_bangalore_bangalore = 0 # to calculate the Part B
@@ -83,6 +87,9 @@ print("The numbers called by people in Bangalore have codes:")
 for phone_code in called_prefixes_bangalore:
     print(phone_code)
 
+print (calls_bangalore_bangalore)
+print(calls_from_bangalore)
 # Answer to the task 3, the part B    
 print ("<{:3.2f}> percent of calls from fixed lines in Bangalore are calls to other \
-       fixed lines in Bangalore".format(((100*calls_bangalore_bangalore)/calls_from_bangalore)))    
+       fixed lines in Bangalore".format(
+       round((100*calls_bangalore_bangalore)/calls_from_bangalore, 3)))    
