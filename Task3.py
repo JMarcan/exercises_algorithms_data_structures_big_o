@@ -70,8 +70,8 @@ for record in calls:
                 calls_bangalore_bangalore = calls_bangalore_bangalore + 1
         #if it's not fixed line, extracts mobile prefix
         else:
-            end = called_number.find(" ")
-            called_prefix = called_number[:end]
+            #The prefix of a mobile number is its first four digits
+            called_prefix = called_number[:4]
             
         #if are code or mobile prefix is not yet in the list, add it
         if called_prefix not in called_prefixes_bangalore:
@@ -87,9 +87,10 @@ print("The numbers called by people in Bangalore have codes:")
 for phone_code in called_prefixes_bangalore:
     print(phone_code)
 
-print (calls_bangalore_bangalore)
-print(calls_from_bangalore)
+#print (calls_bangalore_bangalore)
+#print(calls_from_bangalore)
+    
 # Answer to the task 3, the part B    
-print ("<{:3.2f}> percent of calls from fixed lines in Bangalore are calls to other \
+print ("<{:.2f}> percent of calls from fixed lines in Bangalore are calls to other \
        fixed lines in Bangalore".format(
-       round((100*calls_bangalore_bangalore)/calls_from_bangalore, 3)))    
+       round((100*calls_bangalore_bangalore)/calls_from_bangalore, 2)))    
