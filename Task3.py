@@ -89,7 +89,7 @@ for phone_code in called_prefixes_bangalore:
 
 #print (calls_bangalore_bangalore)
 #print(calls_from_bangalore)
-    
+   
 # Answer to the task 3, the part B    
 print ("<{:.2f}> percent of calls from fixed lines in Bangalore are calls to other \
        fixed lines in Bangalore".format(
