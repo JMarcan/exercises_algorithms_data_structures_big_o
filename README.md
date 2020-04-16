@@ -5,7 +5,7 @@ This project was completed as part of my Data Structures & Algorithms Nanodegree
 that I took to ensure that my code is written efficiently. This is especially important for solutions that need to be scaled. Or solutions with limited computing power. As robots.
 
 ## Project description
-**My goal for the project was to implement code to analyze a dataset of phone calls and texts and calculate its Big-O Notation.**
+**My goal for the project was to implement code to analyze a dataset of phone calls and calculate its Big-O Notation.**
 
 ![comparison of computational complexity](comparison_computational_complexity.png)
 
