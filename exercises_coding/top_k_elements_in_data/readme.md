@@ -1,4 +1,4 @@
-# Data Coding Data Challenge statement
+# Data Coding Challenge Statement
 
 Imagine a file in the following fixed format:
 
